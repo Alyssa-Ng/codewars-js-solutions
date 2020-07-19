@@ -1,0 +1,12 @@
+//https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
+
+function sortArray(array) {
+  var oddNumbers = array.filter(i => i % 2 != 0).sort((a,b) => a-b);
+  for (var i = 0; i < array.length; i++){
+    if(array[i] % 2 !== 0){
+      array.splice(i, 1, oddNumbers[0]);
+      oddNumbers.shift();
+    }
+  }
+  return array;
+}
